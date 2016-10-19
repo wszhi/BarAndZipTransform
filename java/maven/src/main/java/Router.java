@@ -10,7 +10,10 @@ public class Router {
     public String route(String input) {
         Command command = mapping.get(input);
         if(command == null){
-            return "invalid command";
+            command = mapping.get("*");
+            if( command == null){
+                return "invalid command";
+            }
         }
         Result result = command.invoke(input);
         String message = result.getMessage();
