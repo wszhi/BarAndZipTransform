@@ -1,3 +1,4 @@
+
 public interface Command {
-    Result invoke(String input);
+    public Results invoke(String input);
 }
